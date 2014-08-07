@@ -4,8 +4,8 @@ class Meals extends CI_Controller {
   
   public function index()
   {
-	  echo 'meals';
-    // $this->load->view('meals');
+	  // echo 'meals';
+    $this->load->view('meals');
   }
 }
 
