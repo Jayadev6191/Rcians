@@ -46,6 +46,18 @@ $config['index_page'] = '';
 */
 $config['uri_protocol']	= 'AUTO';
 
+/*Setting version for css and javascript files
+ * */
+$config['version'] = '001';
+
+/*
+/-----------------------------------
+/ Base Path for Api calls
+/ ----------------------------------
+*/
+
+$config["base_api"] = 'https://api.moback.com/usermanager';
+
 /*
 |--------------------------------------------------------------------------
 | URL suffix
