@@ -39,6 +39,9 @@
 */
 
 $route['default_controller'] = "rcian";
+
+$route['meal'] = "meals";
+
 $route['404_override'] = '';
 
 
