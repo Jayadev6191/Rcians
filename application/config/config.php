@@ -1,5 +1,22 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+// Rest API path list
+$config['REST_API_LIST'] = array(
+    'user' => array(
+        'sign_up'=>'https://api.moback.com/usermanager/api/user/createUser',
+        'log_in'=>'https://api.moback.com/usermanager/api/user/login',
+        'get_user'=>'https://api.moback.com/usermanager/api/user/getUser'
+    ),
+    'object'=>array(
+        'get_all_tables'=>'https://api.moback.com/objectmanager/api/object/tables',
+        'get_table'=>'https://api.moback.com/objectmanager/api/object/getTable/',
+        'update_table'=>'https://api.moback.com/objectmanager/api/object/table/update',
+        'add_row'=>'https://api.moback.com/objectmanager/api/object/create',
+        'update_row'=>'https://api.moback.com/objectmanager/api/object/update',
+        'delete_row'=>'https://api.moback.com/objectmanager/api/object/delete',
+        'row_count'=>'https://api.moback.com/objectmanager/api/object/getCount/',
+        'get_row'=>'https://api.moback.com/objectmanager/api/object/get'
+    )
+);
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -14,7 +31,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= '';
+$config['base_url']	= 'http://'.$_SERVER['HTTP_HOST'].'/RCians/';
 
 /*
 |--------------------------------------------------------------------------
