@@ -41,6 +41,7 @@
 $route['default_controller'] = "rcian";
 
 $route['meals'] = "meals";
+$route['newsletters'] = "newsletters";
 
 $route['404_override'] = '';
 
