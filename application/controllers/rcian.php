@@ -27,12 +27,14 @@ class Rcian extends CI_Controller {
 	}
 
 	public function register() {
-		print_r($_POST);
-		print_r($this->managerapi->register());
+		// print_r($_POST);
+        $parameters = json_encode($_POST);
+		print_r($this->managerapi->register($parameters));
 	}
 	public function logIn() {
-		print_r($_POST);
-		$this->managerapi->logIn(p);
+		// print_r($_POST);
+        $parameters = json_encode($_POST);
+		$this->managerapi->logIn($parameters);
         $this -> home();
 	}
     public function logOut() {

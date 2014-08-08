@@ -89,7 +89,9 @@
        $("#logout").on("click", function(){
             $.ajax({
                 url: "<?php echo config_item('base_url_api');?>rcian/logout",
-            })
+            }).done(function( msg ) {
+                window.location.href = ".";
+          });
        })
        
    </script>

@@ -42,7 +42,7 @@ $route['default_controller'] = "rcian";
 
 $route['meals'] = "meals";
 $route['newsletters'] = "newsletters";
-
+$route['logout'] = "rcian/logout";
 $route['404_override'] = '';
 
 

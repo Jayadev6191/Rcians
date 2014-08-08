@@ -16,19 +16,19 @@
 				<h4 class="modal-title" id="myModalLabel">Log in</h4>
 			</div>
 			<div class="modal-body">
-				<form role="form">
+				<!-- <form role="form"> -->
 					<div class="form-group">
-						<label for="exampleInputEmail1">Email address</label>
-						<input type="email" class="form-control" id="" placeholder="Enter email">
+						<label for="exampleInputEmail1" >Email address</label>
+						<input type="email" class="form-control" id="log-email" placeholder="Enter email">
 					</div>
 					<div class="form-group">
-						<label for="exampleInputPassword1">Password</label>
-						<input type="password" class="form-control" id="" placeholder="Password">
+						<label for="exampleInputPassword1" >Password</label>
+						<input type="password" class="form-control" id="log-pass" placeholder="Password">
 					</div>
-					<button type="submit" class="btn  btn-primary">
+					<button type="submit" class="btn  btn-primary" id="login">
 						Log in
 					</button>
-				</form>
+				<!-- </form> -->
 			</div>
 		</div>
 	</div>
@@ -44,7 +44,7 @@
 				<h4 class="modal-title" id="myModalLabel">Register</h4>
 			</div>
 			<div class="modal-body">
-				<form role="form">
+				<!-- <form role="form"> -->
 					<div class="form-group">
 						<label for="exampleInputEmail1">Name</label>
 						<input type="text" class="form-control" id="reg-name" placeholder="Enter name">
@@ -64,26 +64,46 @@
 					<button type="submit" class="btn  btn-primary" id="register">
 						Register
 					</button>
-				</form>
+				<!-- </form> -->
 			</div>
 		</div>
 	</div>
 </div>
 <script>
     $("#register").on("click", function(){
-            var name = $("#reg-name").text();
-            var email = $("#reg-email").text();
-            var pass = $("#reg-pass").text();
+            var name = $("#reg-name").val();
+            var email = $("#reg-email").val();
+            var pass = $("#reg-pass").val();
             var data = {
                 "name": name,
                 "email": email,
                 "password":pass
             };
+            console.log(data);
             $.ajax({
-                url: "<?php echo config_item('base_url_api');?>rcian/logout",
+                type: 'POST',
+                url: "<?php echo config_item('base_url_api');?>rcian/register",
                 data: data,
             }) .done(function( msg ) {
-                alert( "Data Saved: " + msg );
+                console.log( "Data Saved: " + msg );
+                location.reload();
+              });
+       })
+       $("#login").on("click", function(){
+            var email = $("#log-email").val();
+            var pass = $("#log-pass").val();
+            var data = {
+                "userid": email,
+                "password":pass
+            };
+            console.log(data);
+            $.ajax({
+                type: 'POST',
+                url: "<?php echo config_item('base_url_api');?>rcian/logIn",
+                data: data,
+            }) .done(function( msg ) {
+                console.log( "Data Saved: " + msg );
+                window.location.href = "home";
               });
        })
 </script>
