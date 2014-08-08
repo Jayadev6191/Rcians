@@ -23,7 +23,11 @@ class Events extends CI_Controller {
  public function getEvents(){
    $this->managerapi->getTableByName('Events');
  }
-
+ public function addEvent(){
+     $param = $_POST;
+      $r = $this->managerapi->addRow($param);
+      print_r($r);
+ }
 
 }
 

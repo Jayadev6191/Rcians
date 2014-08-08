@@ -2,34 +2,7 @@
 <!-- <script type="text/javascript" src="public/js/jqueryForm.js"></script> -->
 <div class="box1 effect8">   
   <h3>Rc Upcomming Events</h3>
-    <ul>
-      <li>
-        <div>
-          <h5>Bowling</h5>
-          <p>Date: 15th August</p>
-          <p>Day: Friday</p>
-          <p>Time: 3:30pm onwards</p>
-          <p>Venue: Abc Street</p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <h5>Beach Day</h5>
-          <p>Date: 30th August</p>
-          <p>Saturday</p>
-          <p>Time: 10:00am onwards</p>
-          <p>Venue: Abc Street</p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <h5>Picnic</h5>
-          <p>Date: 19th September</p>
-          <p>Friday</p>
-          <p>Time: 10:00am - 4:00pm</p>
-          <p>Venue: Abc Street</p>
-        </div>
-      </li>                  
+    <ul id="events">
     </ul>
      <button id="upload" class="btn btn-danger" data-toggle="modal" data-target="#uploadEvent"  title="Events" alt="Event Upload">Create Event</button>       
 </div>
