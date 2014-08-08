@@ -103,7 +103,7 @@
                 data: data,
             }) .done(function( msg ) {
                 console.log( "Data Saved: " + msg );
-                window.location.href = "home";
+                location.reload();
               });
        })
 </script>

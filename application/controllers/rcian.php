@@ -20,11 +20,11 @@ class Rcian extends CI_Controller {
 		$this -> load -> view('template/footer');
 	}
 
-	public function home() {
-		$this -> load -> view('template/header');
-		$this -> load -> view('page/home');
-		$this -> load -> view('template/footer');
-	}
+	// public function home() {
+		// $this -> load -> view('template/header');
+		// $this -> load -> view('page/home');
+		// $this -> load -> view('template/footer');
+	// }
 
 	public function register() {
 		// print_r($_POST);
@@ -33,9 +33,10 @@ class Rcian extends CI_Controller {
 	}
 	public function logIn() {
 		// print_r($_POST);
-        $parameters = json_encode($_POST);
-		$this->managerapi->logIn($parameters);
-        $this -> home();
+        $parameters = json_encode($_POST);$this->managerapi->logIn($parameters);
+        $newdata = json_decode($this->managerapi->logIn($parameters));
+        $this->session->set_userdata($newdata);
+        // $this -> home();
 	}
     public function logOut() {
         $this->session->sess_destroy();
