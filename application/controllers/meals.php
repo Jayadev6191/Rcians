@@ -2,11 +2,9 @@
 
 class Meals extends CI_Controller {
   
-	public
-  
+ 
   public function index()
   {
-	  // echo 'meals';
 	$this->load->view('template/header');
     $this->load->view('meals');
   }
@@ -15,7 +13,7 @@ class Meals extends CI_Controller {
   public function getMealName()
   {
 	  if(isset($_POST) && !empty($_POST)){
-		  if(isset($_POST['mealname']))
+		
 	  } 
   }
 }
