@@ -5,7 +5,7 @@
 	</ul>
 </script>
 
-<div class="box effect8">
+<div class="box1 effect8">
    <h3>Choose your meals</h3>
    <div class="form-group">
 	<div class="form-group">
@@ -22,10 +22,10 @@
   
 
 
-<div class="box1 effect8 ">
+<!-- <div class="box1 effect8 ">
         
     
-</div>
+</div> -->
 <!-- <div id="meals_container" class="container box effect8">
 	<h3>Choose your meals</h3>
   <div class="form-group">

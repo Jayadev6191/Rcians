@@ -3,27 +3,11 @@ class managerapi extends CI_Model {
 
 	function __construct() {
 		parent::__construct();
-<<<<<<< HEAD
-		$this -> REST_API = array(
-		'user' => array('sign_up' => 'https://api.moback.com/usermanager/api/user/createUser'
-		,'log_in' => 'https://api.moback.com/usermanager/api/user/login',
-		 'get_user' => 'https://api.moback.com/usermanager/api/user/getUser',
-		  'get_user'=>'https://api.moback.com/usermanager/api/user/getUser'),
-		   'object' => array('get_all_tables' => 'https://api.moback.com/objectmanager/api/object/tables',
-		    'get_table' => 'https://api.moback.com/objectmanager/api/object/getTable/',
-			 'update_table' => 'https://api.moback.com/objectmanager/api/object/table/update', 
-			 'add_row' => 'https://api.moback.com/objectmanager/api/object/create', 
-			 'update_row' => 'https://api.moback.com/objectmanager/api/object/update', 
-			 'delete_row' => 'https://api.moback.com/objectmanager/api/object/delete', 
-			 'row_count' => 'https://api.moback.com/objectmanager/api/object/getCount/', 
-			 'get_row' => 'https://api.moback.com/objectmanager/api/object/get', 
-			 'get_all' => 'https://api.moback.com/objectmanager/api/object/getAll'));
-=======
+
 		$this -> REST_API = array('file'=>array('upload'=>'https://api.moback.com/filemanager/api/file/upload')
 		,'user' => array('sign_up' => 'https://api.moback.com/usermanager/api/user/createUser'
 		, 'log_in' => 'https://api.moback.com/usermanager/api/user/login', 'get_user' => 'https://api.moback.com/usermanager/api/user/getUser', 'get_user'=>'https://api.moback.com/usermanager/api/user/getUser')
 		, 'object' => array('get_all_tables' => 'https://api.moback.com/objectmanager/api/object/tables', 'get_table' => 'https://api.moback.com/objectmanager/api/object/getTable/', 'update_table' => 'https://api.moback.com/objectmanager/api/object/table/update', 'add_row' => 'https://api.moback.com/objectmanager/api/object/create', 'update_row' => 'https://api.moback.com/objectmanager/api/object/update', 'delete_row' => 'https://api.moback.com/objectmanager/api/object/delete', 'row_count' => 'https://api.moback.com/objectmanager/api/object/getCount/', 'get_row' => 'https://api.moback.com/objectmanager/api/object/get', 'get_all' => 'https://api.moback.com/objectmanager/api/object/getAll'));
->>>>>>> d70b539f05e10e5ff093aaef7d0581b8c99106d2
 		$this -> CONFIG = array('envTypeKey' => 'ZTI4NWZhNTEtNjMwZi00YmE2LTkwMGYtOGI3NDZhMzg3OGEy', 'appKey' => 'OTY4ZWU2ZjgtN2YyZi00OGUzLWJkM2UtMDgxMWY1M2E2NjAx', 'contentType' => 'application/json', );
 		$this -> TABLE = array();
 	}
