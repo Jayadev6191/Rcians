@@ -43,6 +43,8 @@ $route['upcoming'] = "upcoming";
 $route['meals'] = "meals";
 $route['newsletters'] = "newsletters";
 $route['logout'] = "rcian/logout";
+$route['upcoming/apiused'] = "upcoming/apiused";
+
 $route['404_override'] = '';
 
 

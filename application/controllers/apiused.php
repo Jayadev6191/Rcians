@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Upcoming extends CI_Controller {
+class Apiused extends CI_Controller {
   
   public function __construct()
   {
@@ -11,14 +11,9 @@ class Upcoming extends CI_Controller {
    
   public function index()
   {
-	$this->load->view('template/header');
-	$this->load->view('upcoming');
-  }
-  public function apiused()
-  {
   $this->load->view('template/header');
-  $this->load->view('upcoming');
-  }
+  $this->load->view('apiused');
+  }  
   
 }
 
