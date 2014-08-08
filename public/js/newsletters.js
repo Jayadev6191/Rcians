@@ -51,10 +51,13 @@ NewsLetters.submitupload = function(){
               $('#uploadModal').modal('hide');
 
               //TODO Make api call here
-              
-              // $.post('api/post2/user/postUpdateUserAvatar', {uploadfile: jsonData.path, csrf:csrf}, function(tabs) { }, "json")
-                // .done(function(data) {
-                // }).fail(function(data) { $("#activityIndicator").hide();  console.log("ajax error"); });
+              //
+              filename = filename.substring(filename.lastIndexOf('\\')+1,filename.length);//window
+              filename = filename.substring(filename.lastIndexOf('/')+1,filename.length);//linux
+              console.log(filename);
+              $.post('newsLetters/upload_file', {uploadfile: jsonData.path, filename: filename}, function(tabs) { }, "json")
+                .done(function(data) {
+                }).fail(function(data) { $("#activityIndicator").hide();  console.log("ajax error"); });
             } 
             else {
               if (typeof jsonData.status != 'undefined' && jsonData.status == 0){
