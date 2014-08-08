@@ -3,7 +3,7 @@
 <!-- <script type="text/javascript" src="public/js/jqueryForm.js"></script> -->
 <div class="box1 effect8">   
   <h3>Rc Upcomming Events</h3>
-    <ul id="events" class="all_events">
+    <ul id="events" class="">
     </ul>
      <button id="upload" class="btn btn-danger" data-toggle="modal" data-target="#uploadEvent"  title="Events" alt="Event Upload">Create Event</button>       
 </div>
@@ -25,18 +25,18 @@
               <label for="eventDate">Date</label>              
               <input type="date" required="required" name="eventDate" id="eventDate" class="form-control">
               </div>
-              <div class="form-group">
+              <!-- <div class="form-group">
               <label for="event_start_time">Start Time</label>              
               <input type="datetime" required="required" name="event_start_time" id="event_start_time" class="form-control">
               </div>
-              <!--<div class="form-group">
+              <div class="form-group">
               <label for="event_end_time">End Time</label>              
               <input type="text" required="required" name="event_end_time" id="event_end_time" class="form-control">
-              </div>
+              </div> -->
               <div class="form-group">
               <label for="event_end_time">Venue</label>              
               <input type="text" required="required" name="eventvenue" id="eventvenue" class="form-control">
-              </div>-->
+              </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

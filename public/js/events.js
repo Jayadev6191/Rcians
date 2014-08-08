@@ -1,4 +1,13 @@
 window.Events ={};
+ var convert = function(date){
+	         var normal_date = new Date(date);
+	         //console.log(normal_date);
+	         var postDate = normal_date.getTime();
+	         
+	         //console.log(postDate);
+	         //console.log("ABOVE DATE");
+	   return postDate;
+	 };
 Events.CreateEvent = function(){
   console.log("post the event");
   $("#submitevent").click(function(){
@@ -11,11 +20,16 @@ Events.CreateEvent = function(){
     postobject = {name : name,date : date, start_time: start_time, end_time: end_time, eventvenue: eventvenue};   
      console.log(postobject);
      $('#uploadEvent').modal('hide');
+     var d = date+ "000";
+     var ne= new Date (d);
+     console.log(convert(date));
+     
+     console.log(Date.UTC(new Date(date)));
      var post={
      	table: "Events",
      	data:{
      		name:name,
-     		ondate:date,
+     		ondate:convert(date),
      		venue:eventvenue,
      	}
      };
@@ -26,7 +40,7 @@ Events.CreateEvent = function(){
 	    data:post,
 	    type: "POST",
 	  }).done(function( data ) {    
-	    	location.reload();
+	    	// location.reload();
 	  })
 	  .fail(function (data){         
 	    if (data.status == 400){
@@ -48,11 +62,11 @@ Events.getEvents = function(){
     var content = "<ul>";
 	for(var i =0; i < data['object'].length; i++){
 		
-		content+="<li>";
+		content+="<li><pre>";
 		content+="<h3>"+data['object'][i].name+"</h3>";
 		content+="<p>Venue: "+data['object'][i].venue+"</p>";
-		content+="<p>onDate: "+new Date(parseInt(data['object'][i].ondate)).toString()+"</p>";
-		content+="</li>";
+		content+="<p>Date: "+new Date(parseInt(data['object'][i].ondate)).toDateString()+"</p>";
+		content+="</pre></li>";
 	}
 	content+="</ul>";
 	$("#events").append(content);
