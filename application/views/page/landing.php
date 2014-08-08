@@ -86,6 +86,7 @@
                 data: data,
             }) .done(function( msg ) {
                 console.log( "Data Saved: " + msg );
+                alert("success");
                 location.reload();
               });
        })
@@ -103,6 +104,7 @@
                 data: data,
             }) .done(function( msg ) {
                 console.log( "Data Saved: " + msg );
+                alert("success");
                 location.reload();
               });
        })

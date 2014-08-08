@@ -28,7 +28,7 @@
     <script src="assets/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
   </head>
 
-  <body>
+  <body>      
     <?php if(!$this->session->userdata('ssotoken'))
     { ?>
         <div class="navbar navbar-default navbar-static-top navbar-rcians" role="navigation">
@@ -88,7 +88,7 @@
    <script>
        $("#logout").on("click", function(){
             $.ajax({
-                url: "<?php echo config_item('base_url_api');?>rcian/logout",
+                url: "rcian/logout",
             }).done(function( msg ) {
                 window.location.href = ".";
           });
