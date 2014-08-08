@@ -59,10 +59,14 @@
               <label for="event_end_time">End Time</label>              
               <input type="text" required="required" name="event_end_time" id="event_end_time" class="form-control">
               </div>
+              <div class="form-group">
+              <label for="event_end_time">Venue</label>              
+              <input type="text" required="required" name="eventvenue" id="eventvenue" class="form-control">
+              </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button id="submitupload" type="button" class="btn btn-primary">Create</button>
+              <button id="submitevent" type="button" class="btn btn-primary">Create</button>
               <!-- <input type="submit" value="Upload" class="btn btn-primary"> -->
             </div>
           </div><!-- /.modal-content -->
