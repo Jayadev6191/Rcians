@@ -47,21 +47,21 @@
 				<form role="form">
 					<div class="form-group">
 						<label for="exampleInputEmail1">Name</label>
-						<input type="text" class="form-control" id="" placeholder="Enter name">
+						<input type="text" class="form-control" id="reg-name" placeholder="Enter name">
 					</div>
 					<div class="form-group">
 						<label for="exampleInputEmail1">Email address</label>
-						<input type="email" class="form-control" id="" placeholder="Enter email">
+						<input type="email" class="form-control" id="reg-email" placeholder="Enter email">
 					</div>
 					<div class="form-group">
 						<label for="exampleInputPassword1">Password</label>
-						<input type="password" class="form-control" id="" placeholder="Password">
+						<input type="password" class="form-control" id="reg-pass" placeholder="Password">
 					</div>
 					<div class="form-group">
 						<label for="exampleInputPassword1">Re-Password</label>
 						<input type="password" class="form-control" id="" placeholder="Password">
 					</div>
-					<button type="submit" class="btn  btn-primary">
+					<button type="submit" class="btn  btn-primary" id="register">
 						Register
 					</button>
 				</form>
@@ -69,3 +69,21 @@
 		</div>
 	</div>
 </div>
+<script>
+    $("#register").on("click", function(){
+            var name = $("#reg-name").text();
+            var email = $("#reg-email").text();
+            var pass = $("#reg-pass").text();
+            var data = {
+                "name": name,
+                "email": email,
+                "password":pass
+            };
+            $.ajax({
+                url: "<?php echo config_item('base_url_api');?>rcian/logout",
+                data: data,
+            }) .done(function( msg ) {
+                alert( "Data Saved: " + msg );
+              });
+       })
+</script>

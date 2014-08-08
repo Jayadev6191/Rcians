@@ -7,6 +7,7 @@ class Rcian extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this -> load -> model('managerapi');
+        $this->load->library('session');
 	}
 
 	public function index() {
@@ -27,12 +28,17 @@ class Rcian extends CI_Controller {
 
 	public function register() {
 		print_r($_POST);
-		$this->managerapi->register();
+		print_r($this->managerapi->register());
 	}
 	public function logIn() {
 		print_r($_POST);
 		$this->managerapi->logIn(p);
+        $this -> home();
 	}
+    public function logOut() {
+        $this->session->sess_destroy();
+        $this -> overview();
+    }
 	public function test() {
 		$this->managerapi->getTableByName('Meals');
 		print_r($_POST);
@@ -52,7 +58,10 @@ class Rcian extends CI_Controller {
 		// print_r(json_encode($p3, JSON_FORCE_OBJECT));
 		// print_r($this -> managerapi -> register($p3));
 		$p4 = array("userid"=>"m@g.com","password"=>"abc");
-		$this->managerapi->logIn($p4);
+		$newdata = json_decode($this->managerapi->logIn($p4));
+
+        $this->session->set_userdata($newdata);
+        print_r($this->session->userdata('ssotoken'));
 	}
 	
 
