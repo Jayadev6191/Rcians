@@ -15,12 +15,21 @@ class Meals extends CI_Controller {
     $this->load->view('meals');
   }
   
-  public function getMealName()
+  
+  public function test()
   {
-	  $meal_response=$this->managerapi->getTableByName("Meals");
-	  print_r($meal_response);
-	  
+	  $this->managerapi->getTableByName("Meals");
+	  var_dump($this->managerapi->getTableByName("Meals"));
   }
+  
+  public function insertMealName()
+  {	  
+	  $param = $_POST;
+	  $r = $this->managerapi->addRow($param);
+	  print_r($r);
+  }
+  
+  
 }
 
 /* End of file welcome.php */

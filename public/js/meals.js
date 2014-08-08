@@ -7,18 +7,32 @@ $(document).ready(function(){
 		url:url,
 		success:function(res){
 			// var a=JSON.stringify(res);
-			console.log(res);
 		}
 	});
-	// console.log(document.URL);
-// 	$('#submit_meal').click(function(){
-// 		if($(this).val()!==""){
-// 			var data=$(this).val();
-// 			$.ajax({
-// 				type:"post",
-// 				url:document.URL,
-// 				data:data
-// 			});
-// 		}
-// 	});
+
+	$('#submit_meal').click(function(){
+		// alert($('#meal_name').val());
+		if($('#meal_name').val()!==""){
+			var meal_name=$('#meal_name').val();
+			
+			var row={
+				"table":"Meals",
+				"data":{
+					"Cuisine":meal_name,
+					}
+				};
+			
+			
+			
+			$.ajax({
+				type:"POST",
+				url:'meals/insertMealName/',
+				data:row,
+				success:function(res){
+					console.log('success');
+				}
+			});
+		}	
+		
+	});
 });
