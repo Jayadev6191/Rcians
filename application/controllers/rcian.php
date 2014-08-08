@@ -25,7 +25,7 @@ class Rcian extends CI_Controller {
         $this -> load -> view('template/footer');
     }
 
-    public function register() {
+    public function register(){
         $this->managerapi->register();
     }
 
