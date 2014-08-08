@@ -2,6 +2,11 @@
 <script type="text/javascript" src="public/js/jqueryForm.js"></script>
 <div id="meals_container">
   <h3>Rc News letter</h3>
+    <ul>
+      <li><a href="./uploads/App_Store_Marketing_Getting_Started_Guide.pdf" target="_blank">Jan</a></li>
+      <li><a href="./uploads/rc_feb.pdf"  target="_blank">Feb</a></li>
+      <li><a href="./uploads/rc_march.pdf"  target="_blank">March</a></li>      
+    </ul>
      <button id="upload" class="btn btn-danger" data-toggle="modal" data-target="#uploadModal"  title="Newsletter" alt="Newsletter">Upload News letter</button>       
 </div>
 <!-- news letter upload modal -->

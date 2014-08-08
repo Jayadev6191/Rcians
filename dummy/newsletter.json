@@ -1,0 +1,21 @@
+{
+  "all_newsletters": {
+    "monthly": [
+      {
+        "month": "Jan",
+        "file": "path to file",
+        "DisplayName": "Rc_Jan.pdf"
+      },
+      {
+        "month": "Feb",
+        "file": "path to file",
+        "DisplayName": "Rc_Feb.pdf"
+      },
+      {
+        "month": "March",
+        "file": "path to file",
+        "DisplayName": "Rc_March.pdf"
+      }
+    ]
+  }
+}

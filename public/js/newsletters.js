@@ -1,5 +1,24 @@
 window.NewsLetters ={};
 
+NewsLetters.getNewsletters = function(){
+  console.log("getting");
+  $.ajax({     
+    url: "./dummy/newsletter.json",
+    crossDomain : true,
+    dataType : "json",
+    type: "GET",
+  }).done(function( data ) {    
+    console.log(data);
+    var all_letters = data.all_newsletters.monthly;
+    console.log(all_letters);    
+    
+  })
+  .fail(function (data){         
+    if (data.status == 400){
+      alert("Bad Request");
+    }
+  });
+};
 NewsLetters.Upload = function(){
   //console.log("upload");
   $("#upload").click(function(){
@@ -56,4 +75,5 @@ NewsLetters.submitupload = function(){
 $(document).ready(function(){  
   NewsLetters.Upload();
   NewsLetters.submitupload();
+  NewsLetters.getNewsletters();
 });
