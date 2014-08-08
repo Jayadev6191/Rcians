@@ -29,7 +29,8 @@
   </head>
 
   <body>
-      <?php print_r($this->session->userdata)?>
+      <div class="bg"></div>
+      <!-- <?php print_r($this->session->userdata)?> -->
     <?php if(!$this->session->userdata('ssotoken'))
     { ?>
         <div class="navbar navbar-default navbar-static-top navbar-rcians" role="navigation">
@@ -65,14 +66,14 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li class="active"><a href="rcian">Home</a></li>
             <li><a href="meals">Meal</a></li>
             <!-- <li><a href="#contact">Projects</a></li> -->
              <li><a href="newsLetters">News Letter</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Activities <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Events</a></li>
+                <li><a href="events">Events</a></li>
                 <li><a href="#">Announcement</a></li>
                 <li><a href="#">Poll</a></li>
               </ul>
@@ -94,5 +95,9 @@
                 window.location.href = ".";
           });
        })
+       var tab = sessionStorage.tab;
+       if(tab != null){
+           
+       }
        
    </script>

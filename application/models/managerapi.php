@@ -3,6 +3,7 @@ class managerapi extends CI_Model {
 
 	function __construct() {
 		parent::__construct();
+
 		$this -> REST_API = array('file'=>array('upload'=>'https://api.moback.com/filemanager/api/file/upload')
 		,'user' => array('sign_up' => 'https://api.moback.com/usermanager/api/user/createUser'
 		, 'log_in' => 'https://api.moback.com/usermanager/api/user/login', 'get_user' => 'https://api.moback.com/usermanager/api/user/getUser', 'get_user'=>'https://api.moback.com/usermanager/api/user/getUser')
@@ -29,6 +30,7 @@ class managerapi extends CI_Model {
 
 	function getTableByName($tableName) {
 	  //print_r($tableName);
+
 		$response = $this -> getAll(array('table' => $tableName));
 		print_r($response);
 		return $response;
@@ -50,9 +52,8 @@ class managerapi extends CI_Model {
 		return $this -> rest_execute($path, $this -> CONFIG['contentType'], $parameters, null);
 	}
 
-	function getAll($parameters) {
+	function getAll($parameters){
 		$path = $this -> REST_API['object']['get_all'];
-
 		return $this -> rest_execute($path, $this -> CONFIG['contentType'], $parameters, null);
 	}
 
@@ -108,9 +109,9 @@ class managerapi extends CI_Model {
         $url = $path;
         $sesstoken = $this->session->userdata('ssotoken');
         $ch = curl_init();
-       $filedata = array( 'attachments' => '@'.$tmpfile.';filename='.$filename); //,'MediaType' => 'MULTIPART_FORM_DATA'
+       // $filedata = array( 'attachments' => '@'.$tmpfile.';filename='.$filename); //,'MediaType' => 'MULTIPART_FORM_DATA'
         // $args['file'] = new CurlFile($tmpfile, 'file/pdf');
-         // $args['file'] = new CurlFile($filename, 'multipart/form-data');
+         $args['file'] = new CurlFile($filename, 'multipart/form-data');
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 90);       
         curl_setopt($ch, CURLOPT_TIMEOUT, 120);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -120,13 +121,14 @@ class managerapi extends CI_Model {
         
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
         curl_setopt($ch, CURLOPT_HEADER, 0);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $filedata);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $args);
         curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type:multipart/form-data",'X-Moback-SessionToken-Key:'.$sesstoken, "X-Moback-Environment-Key:" . $this -> CONFIG['envTypeKey']
         , "X-Moback-Application-Key:" . $this -> CONFIG['appKey'],'description: asdadsda'));
         curl_setopt($ch, CURLOPT_URL, $url);
        
         $response = curl_exec($ch);
-        echo $url.json_encode($response);
+        // echo $url.json_encode($response);
+        echo json_encode(curl_getinfo($ch));
         // $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         curl_close($ch);
         return $response;
