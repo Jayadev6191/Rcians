@@ -15,7 +15,7 @@ class Meals extends CI_Controller {
   public function getMealName()
   {
 	  if(isset($_POST) && !empty($_POST)){
-		  if(isset($_POST['mealname']))
+		  if(isset($_POST['mealname'])){}
 	  } 
   }
 }
