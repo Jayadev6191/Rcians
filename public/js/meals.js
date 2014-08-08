@@ -6,8 +6,8 @@ $(document).ready(function(){
 		type:"post",
 		url:url,
 		success:function(res){
-			var a=JSON.stringify(res);
-			console.log(a);
+			// var a=JSON.stringify(res);
+			console.log(res);
 		}
 	});
 	// console.log(document.URL);

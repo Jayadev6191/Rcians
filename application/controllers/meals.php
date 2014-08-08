@@ -18,10 +18,10 @@ class Meals extends CI_Controller {
   {
 	  $meal_response=$this->managerapi->getTableByName("Meals");
 	  $meal=json_decode($meal_response,true);
-	  foreach($meal['object'] as $a=>$val){
-			$a=$val['Cuisine'];
-			echo $a.'<br>';
+	 	foreach($meal['object'] as $a=>$val){
+			echo $val['Cuisine'].'<br>';
 		};
+	  
   }
 }
 
