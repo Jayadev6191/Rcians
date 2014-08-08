@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<body>
-<script type="text/javascript" src="public/js/meals.js"></script>
 <script type="text/x-handlebars-template" id="mealListTmpl">
 	<ul>
 		<li>{{meal}}</li>
 	</ul>
 </script>
-
-<div id="meals_container">
+<div class="container box1 effect8">
+    <h3>Effect 8</h3>
+</div>
+<div id="meals_container" class="container box effect8">
   <h3>Choose your meals</h3>
 	<div class="form-group">
 		<button type="button" class="btn btn-danger" style="float: right" id="submit_meal">Go</button>
@@ -24,6 +22,4 @@
 		
 	</div>
 </div>
-
-</body>
-</html>
+<script type="text/javascript" src="public/js/meals.js"></script>

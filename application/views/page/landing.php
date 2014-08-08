@@ -82,7 +82,7 @@
             console.log(data);
             $.ajax({
                 type: 'POST',
-                url: "<?php echo config_item('base_url_api');?>rcian/register",
+                url: "rcian/register",
                 data: data,
             }) .done(function( msg ) {
                 console.log( "Data Saved: " + msg );
@@ -99,7 +99,7 @@
             console.log(data);
             $.ajax({
                 type: 'POST',
-                url: "<?php echo config_item('base_url_api');?>rcian/logIn",
+                url: "rcian/logIn",
                 data: data,
             }) .done(function( msg ) {
                 console.log( "Data Saved: " + msg );
