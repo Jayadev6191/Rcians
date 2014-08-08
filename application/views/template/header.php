@@ -13,7 +13,8 @@
     <link href="<?php echo config_item('base_url');?>assets/css/style.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link href="<?php echo config_item('base_url');?>assets/bootstrap-3.2.0-dist/css/bootstrap.css" rel="stylesheet">
-
+	<script src="<?php echo config_item('base_url');?>assets/plugins/jquery-2.1.1.min.js"></script>
+	<script src="<?php echo config_item('base_url');?>assets/plugins/handlebars-v1.3.0.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>

@@ -2,10 +2,21 @@
 
 class Meals extends CI_Controller {
   
+	public
+  
   public function index()
   {
-	  echo 'meals';
-    // $this->load->view('meals');
+	  // echo 'meals';
+	$this->load->view('template/header');
+    $this->load->view('meals');
+  }
+  
+  
+  public function getMealName()
+  {
+	  if(isset($_POST) && !empty($_POST)){
+		  if(isset($_POST['mealname']))
+	  } 
   }
 }
 

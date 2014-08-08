@@ -29,6 +29,7 @@ class Rcian extends CI_Controller {
         $this->managerapi->register();
     }
 
+
 }
 
 /* End of file welcome.php */
