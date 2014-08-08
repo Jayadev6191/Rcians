@@ -3,3 +3,25 @@
 	background-size: 83px;
 	background-position-y: -5px;
 }
+
+a.navbar-brand{
+	margin-left:30px;
+}
+
+#meals_container{
+	background-color:#3399FF;
+	width:70%;
+	height:500px;
+	margin-left:auto;
+	margin-right:auto;
+	padding:5px;
+	border-radius:15px;
+}
+
+#meals_container input{
+	width:220px;
+}
+
+#meals_container .form-group{
+	display:inline-block;
+}

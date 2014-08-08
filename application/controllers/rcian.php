@@ -7,6 +7,7 @@ class Rcian extends CI_Controller {
     $this->load->view('landing');
     $this->load->view('template/footer');
   }
+  
   public function home()
   {
     $this->load->view('template/header');

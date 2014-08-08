@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<body>
 
-<div id="container">
-  <h1>Choose your meals</h1>
+<body>
+<script type="text/javascript" src="public/js/meals.js"></script>
+<script type="text/x-handlebars-template" id="mealListTmpl">
+	<ul>
+		<li>{{meal}}</li>
+	</ul>
+</script>
+
+<div id="meals_container">
+  <h3>Choose your meals</h3>
 	<div class="form-group">
-	    <label class="sr-only" for="exampleInputEmail2">Email address</label>
-	    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+		<button type="button" class="btn btn-danger" style="float: right" id="submit_meal">Go</button>
+	    <input type="text" class="form-control" id="meal_name" placeholder="Enter your favourite food"></input>
 	</div>
-  <p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
+	
+	<div class="selected_choices"></div>
+    <!-- <div style="overflow: hidden; padding-right: .5em;">
+       <input type="text" name="term" style="width: 100%;" />
+    </div> -->
+	<div>
+		
+	</div>
 </div>
 
 </body>
