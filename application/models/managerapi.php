@@ -25,7 +25,9 @@ class managerapi extends CI_Model {
 	}
 
 	function getTableByName($tableName) {
-		return $this -> getAll(array('table' => $tableName));
+		$response = $this -> getAll(array('table' => $tableName));
+		print_r($response);
+		return $response;
 	}
 
 	function getAllTable() {
@@ -86,7 +88,7 @@ class managerapi extends CI_Model {
 		if($custome_request != null);
 -			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $custome_request);
 		$response = curl_exec($ch);
-		echo $url.json_encode($response);
+		// echo $url.json_encode($response);
 		// exit;
 		curl_close($ch);
 		return $response;
