@@ -44,27 +44,30 @@ class managerapi extends CI_Model {
 
 	function getAllTable() {
 		$path = $this -> REST_API['object']['get_all_tables'];
-		return $this -> rest_execute($path, $this -> CONFIG['contentType'], '');
+		return $this -> rest_execute($path, $this -> CONFIG['contentType'], '', null);
 
 	}
 
 	function getTable($tableId) {
 		$path = $this -> REST_API['object']['get_table'] . $tableId;
-		return $this -> rest_execute($path, $this -> CONFIG['contentType'], '');
+		return $this -> rest_execute($path, $this -> CONFIG['contentType'], '', null);
 	}
 
 	function getRow($parameters) {
 		$path = $this -> REST_API['object']['get_row'];
-		return $this -> rest_execute($path, $this -> CONFIG['contentType'], $parameters);
+		return $this -> rest_execute($path, $this -> CONFIG['contentType'], $parameters, null);
 	}
 
 	function getAll($parameters) {
 		$path = $this -> REST_API['object']['get_all'];
 
-		return $this -> rest_execute($path, $this -> CONFIG['contentType'], $parameters);
+		return $this -> rest_execute($path, $this -> CONFIG['contentType'], $parameters, null);
 	}
-
-	function rest_execute($path, $contentType, $parameters) {
+	function addRow($parameters){
+		$path = $this -> REST_API['object']['add_row'];
+		return $this -> rest_execute($path, $this -> CONFIG['contentType'], $parameters, 'PUT');
+	}
+	function rest_execute($path, $contentType, $parameters, $custome_request) {
 		$url = $path;
 		$fields_string = json_encode($parameters, JSON_FORCE_OBJECT);
 		$ch = curl_init();
@@ -78,6 +81,8 @@ class managerapi extends CI_Model {
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_POST, count($parameters));
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
+		if($custome_request != null);
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $custome_request);
 		$response = curl_exec($ch);
 		//echo $url.json_encode($response);
 		// exit;

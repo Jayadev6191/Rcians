@@ -28,6 +28,9 @@ class Rcian extends CI_Controller {
     public function register() {
         // $tmp->;
         $this->managerapi->register();
+		// $p = array("table"=>"Meals", "data"=> array("Cuisine"=>"V1"));
+		print_r($this->managerapi->addRow($p));
+		
     }
 
 
