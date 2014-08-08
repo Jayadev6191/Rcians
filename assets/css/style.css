@@ -1,3 +1,7 @@
+/*body{
+	background: url("../img/RCmenuBG_monitor.png") no-repeat;
+	background-size:cover;
+}*/
 .navbar-rcians .navbar-brand{
 	background: url("../img/creative-design-illustration.png") no-repeat;
 	background-size: 83px;
@@ -13,7 +17,22 @@
 	background:#FFF;
 	margin:40px auto;
 }
+<<<<<<< HEAD
 
+=======
+/*.box1 h3{
+	text-align:center;
+	position:relative;
+	top:80px;
+}*/
+.box1 {
+	width:70%;
+	height:auto;
+	background:#FFF;
+	padding: 50px;
+	margin:40px auto;
+}
+>>>>>>> 747212c7d942a55151fe9391d21fc5728bd0b078
 /*==================================================
  * Effect 5
  * ===============================================*/
