@@ -13,7 +13,7 @@
   <h3>Choose your meals</h3>
 	<div class="form-group">
 		<button type="button" class="btn btn-danger" style="float: right" id="submit_meal">Go</button>
-	    <input type="text" class="form-control" id="meal_name" placeholder="Enter your favourite food"></input>
+	    <input type="text" class="form-control" name="mealname" id="meal_name" placeholder="Enter your favourite food"></input>
 	</div>
 	
 	<div class="selected_choices"></div>
