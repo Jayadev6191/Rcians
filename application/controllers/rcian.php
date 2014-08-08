@@ -26,10 +26,17 @@ class Rcian extends CI_Controller {
 	}
 
 	public function register() {
+		print_r($_POST);
+		$this->managerapi->register();
 	}
-
+	public function logIn() {
+		print_r($_POST);
+		$this->managerapi->logIn(p);
+	}
 	public function test() {
 		$this->managerapi->getTableByName('Meals');
+		print_r($_POST);
+		
 		// $tmp->;
 		// $this->managerapi->register();
 		// $p = array("table"=>"Meals", "data"=> array("Cuisine"=>"V1"));
@@ -44,10 +51,10 @@ class Rcian extends CI_Controller {
 		// $p3 = array("email"=>"m@g.com", "password" => "abc", "name"=>"n");
 		// print_r(json_encode($p3, JSON_FORCE_OBJECT));
 		// print_r($this -> managerapi -> register($p3));
-		
+		$p4 = array("userid"=>"m@g.com","password"=>"abc");
+		$this->managerapi->logIn($p4);
 	}
 	
-
 
 }
 
