@@ -29,6 +29,7 @@
   </head>
 
   <body>
+      <div class="bg"></div>
       <!-- <?php print_r($this->session->userdata)?> -->
     <?php if(!$this->session->userdata('ssotoken'))
     { ?>
@@ -72,7 +73,7 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Activities <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Events</a></li>
+                <li><a href="events">Events</a></li>
                 <li><a href="#">Announcement</a></li>
                 <li><a href="#">Poll</a></li>
               </ul>
@@ -94,5 +95,9 @@
                 window.location.href = ".";
           });
        })
+       var tab = sessionStorage.tab;
+       if(tab != null){
+           
+       }
        
    </script>

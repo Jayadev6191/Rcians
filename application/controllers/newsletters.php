@@ -46,6 +46,14 @@ class NewsLetters extends CI_Controller {
       echo json_encode($data);
     }
   }
+  
+  public function upload_file(){
+      
+      print_r($_POST);
+      $filePath = $_POST["uploadfile"];
+      $fileName = basename($_POST["filename"]);
+      $this->managerapi->uploadFile($filePath, $fileName);
+  }
 
 
 }
