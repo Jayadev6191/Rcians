@@ -11,6 +11,7 @@ Events.CreateEvent = function(){
     postobject = {name : name,date : date, start_time: start_time, end_time: end_time, eventvenue: eventvenue};   
      console.log(postobject);
      $('#uploadEvent').modal('hide');
+     window.location.assign("events/getEvents");
   });
 };
 Events.getEvents = function(){

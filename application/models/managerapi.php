@@ -28,6 +28,7 @@ class managerapi extends CI_Model {
 	}
 
 	function getTableByName($tableName) {
+	  //print_r($tableName);
 		$response = $this -> getAll(array('table' => $tableName));
 		print_r($response);
 		return $response;
