@@ -4,38 +4,6 @@ if (!defined('BASEPATH'))
 
 class Rcian extends CI_Controller {
 
-<<<<<<< HEAD
-     public function __construct()
-    {
-        parent::__construct();
-        $this->load->model('managerapi');     
-    }
-    public function index() {
-        $this -> overview();
-    }
-
-    public function overview() {
-        $this -> load -> view('template/header');
-        $this -> load -> view('page/landing');
-        $this -> load -> view('template/footer');
-    }
-
-    public function home() {
-        $this -> load -> view('template/header');
-        $this -> load -> view('page/home');
-        $this -> load -> view('template/footer');
-    }
-
-<<<<<<< HEAD
-    public function register(){
-=======
-    public function register() {
-        // $tmp->;
->>>>>>> d4735eb307c59caef9beb758d46b121a828c4609
-        $this->managerapi->register();
-    }
-
-=======
 	public function __construct() {
 		parent::__construct();
 		$this -> load -> model('managerapi');
@@ -79,7 +47,7 @@ class Rcian extends CI_Controller {
 		
 	}
 	
->>>>>>> 1239ca95f073b36f232bd5d0f9b9bd661dcc25da
+
 
 }
 
