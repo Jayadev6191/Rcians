@@ -16,10 +16,10 @@ class Meals extends CI_Controller {
   }
   
   
-  public function test()
+  public function getMealName()
   {
 	  $this->managerapi->getTableByName("Meals");
-	  var_dump($this->managerapi->getTableByName("Meals"));
+	  // var_dump($this->managerapi->getTableByName("Meals"));
   }
   
   public function insertMealName()

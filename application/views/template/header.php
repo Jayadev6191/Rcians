@@ -95,9 +95,13 @@
                 window.location.href = ".";
           });
        })
+       $(".navbar a").on("click", function(){
+           sessionStorage.tab = $(this).attr("href");
+       });
        var tab = sessionStorage.tab;
        if(tab != null){
-           
+           $(".navbar a").parent().removeClass("active");
+           $(".navbar a[href="+tab+"]").parent().addClass("active");
        }
        
    </script>

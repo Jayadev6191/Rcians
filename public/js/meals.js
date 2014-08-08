@@ -1,12 +1,23 @@
 $(document).ready(function(){
+	var source = $("#mealListTmpl").html();
+	var tmpl = Handlebars.compile(source);
+	
 	var tableName="Meals";
-	var url=document.URL+"/getMealName"
+	var url="meals/getMealName";
 	console.log(url);
 	$.ajax({
 		type:"post",
 		url:url,
 		success:function(res){
-			// var a=JSON.stringify(res);
+			var data = $.parseJSON(res);
+			var content = "<ul>";
+			for(var i =0; i < data['object'].length; i++){
+				content+="<li>"+data['object'][i].Cuisine+"</li>";
+				
+			}
+			content+="</ul>";
+			$(".selected_choices").html(content);
+			console.log(data);
 		}
 	});
 
@@ -22,14 +33,13 @@ $(document).ready(function(){
 					}
 				};
 			
-			
-			
 			$.ajax({
 				type:"POST",
 				url:'meals/insertMealName/',
 				data:row,
 				success:function(res){
 					console.log('success');
+					location.reload();
 				}
 			});
 		}	
