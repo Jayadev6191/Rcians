@@ -28,8 +28,9 @@
     <script src="assets/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
   </head>
 
-  <body>      
-    <?php if(!$this->session->userdata('session_id'))
+  <body>
+      <!-- <?php print_r($this->session->userdata)?> -->
+    <?php if(!$this->session->userdata('ssotoken'))
     { ?>
         <div class="navbar navbar-default navbar-static-top navbar-rcians" role="navigation">
       <div class="container">
