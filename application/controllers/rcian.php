@@ -3,7 +3,7 @@ if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
 class Rcian extends CI_Controller {
-    // variable
+
      public function __construct()
     {
         parent::__construct();
@@ -25,7 +25,12 @@ class Rcian extends CI_Controller {
         $this -> load -> view('template/footer');
     }
 
+<<<<<<< HEAD
     public function register(){
+=======
+    public function register() {
+        // $tmp->;
+>>>>>>> d4735eb307c59caef9beb758d46b121a828c4609
         $this->managerapi->register();
     }
 
