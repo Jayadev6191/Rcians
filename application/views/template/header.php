@@ -62,25 +62,38 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">RCians</a>
+          <a class="navbar-brand" href=".">RCians</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="rcian">Home</a></li>
+            <!-- <li class="active"><a href="/Rcians/">Home</a></li> -->
             <li><a href="meals">Meal</a></li>
             <!-- <li><a href="#contact">Projects</a></li> -->
              <li><a href="newsLetters">News Letter</a></li>
-            <li class="dropdown">
+             <li><a href="events">Events</a></li>
+            <!-- <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Activities <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="events">Events</a></li>
+                <li><a href="#">Events</a></li>
                 <li><a href="#">Announcement</a></li>
                 <li><a href="#">Poll</a></li>
               </ul>
-            </li>
+            </li> -->
+            <li><a href="upcoming">Up Coming</a></li>
+            <!-- <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Up Coming<span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Notice</a></li>
+                    <li><a href="#">Leave Board</a></li>
+                    <li><a href="#">Leave Board</a></li>
+                    <li><a href="#">Poll</a></li>
+                    <li><a href="#">Message Broadcasting</a></li>
+                </ul>
+            </li> -->
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a id="logout" href="#">Log out</a></li>
+            <li><a id="logout" href="#logout">Hello:  <b><?php echo $this->session->userdata('username')?></b> Log out</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

@@ -39,7 +39,7 @@
 */
 
 $route['default_controller'] = "rcian";
-
+$route['upcoming'] = "upcoming";
 $route['meals'] = "meals";
 $route['newsletters'] = "newsletters";
 $route['logout'] = "rcian/logout";

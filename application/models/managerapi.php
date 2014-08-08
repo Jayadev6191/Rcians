@@ -20,14 +20,36 @@ class managerapi extends CI_Model {
 	function logIn($parameters) {
 		$path = $this -> REST_API['user']['log_in'];
 		$response = $this -> rest_execute($path, $this -> CONFIG['contentType'], $parameters, 'POST');
-		print_r($response);
+      
 		return $response;
 	}
 
 	function logOut($parameters) {
 
 	}
-
+    function getUser(){
+        $sesstoken = $this->session->userdata('ssotoken');
+        $path = $this -> REST_API['user']['get_user'];
+        $url = $path;
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 90);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 120);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-Moback-SessionToken-Key:'.$sesstoken, "X-Moback-Environment-Key:" . $this -> CONFIG['envTypeKey'], "X-Moback-Application-Key:" . $this -> CONFIG['appKey']));
+        curl_setopt($ch, CURLOPT_URL, $url);
+        // curl_setopt($ch, CURLOPT_POST, count($parameters));
+        // curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
+        // if($custome_request != null);
+// -           curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $custome_request);
+        $response = curl_exec($ch);
+        // echo $url.json_encode($response);
+        // exit;
+        curl_close($ch);
+        return $response;
+    }
 	function getTableByName($tableName) {
 	  //print_r($tableName);
 

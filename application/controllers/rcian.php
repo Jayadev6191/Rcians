@@ -36,12 +36,19 @@ class Rcian extends CI_Controller {
         $parameters = json_encode($_POST);$this->managerapi->logIn($parameters);
         $newdata = json_decode($this->managerapi->logIn($parameters));
         $this->session->set_userdata($newdata);
+        $user_name = json_decode($this->managerapi->getUser())->user->name;
+        $this->session->set_userdata('username',$user_name);
+        print_r($response);
         // $this -> home();
 	}
     public function logOut() {
         $this->session->sess_destroy();
         $this -> overview();
     }
+    public function getUser(){
+         print_r(json_decode($this->managerapi->getUser())->user->name);
+    }
+    
 	public function test() {
 		$this->managerapi->getTableByName('Meals');
 		print_r($_POST);
