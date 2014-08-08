@@ -31,7 +31,7 @@
   <body>
       <div class="bg"></div>
       <!-- <?php print_r($this->session->userdata)?> -->
-    <?php if(!$this->session->userdata('ssotoken'))
+    <?php if(!$this->session->userdata('session_id'))
     { ?>
         <div class="navbar navbar-default navbar-static-top navbar-rcians" role="navigation">
       <div class="container">
