@@ -8,9 +8,11 @@ class managerapi extends CI_Model {
 		$this -> TABLE = array();
 	}
 
-	function register() {
+	function register($parameters) {
+		$path = $this -> REST_API['user']['sign_up'];
+		return $this -> rest_execute($path, $this -> CONFIG['contentType'], $parameters, 'PUT');
 		// $path = $this->REST_API['user']['sign_up'];
-		print_r($this -> getTableByName('Meals'));
+		//print_r($this -> getTableByName('Meals'));
 		// return $this->rest_execute($path,$this->CONFIG['contentType'],$parameters);
 	}
 
@@ -23,50 +25,53 @@ class managerapi extends CI_Model {
 	}
 
 	function getTableByName($tableName) {
-		// $allTable = json_decode($this -> getAllTable());
-		// if (isset($allTable -> object)) {
-			// foreach ($allTable->object as $table) {
-// 
-				// if ($table -> name == $tableName) {
-// 
-					// $currenTable = json_decode($this -> getTable($table -> id));
-					// // print_r($currenTable);
-					// $parameters = array('objectId' => $currenTable -> table -> columns[0] -> id, 'table' => $currenTable -> table -> name);
-					// // print_r(json_encode($parameters));
-					// // return $this -> getRow($parameters);
-					// return $this -> getAll(array('table'=>'Meals'));
-				// }
-			// }
-		// }
-		// return null;
-		return $this -> getAll(array('table'=>$tableName));
+		return $this -> getAll(array('table' => $tableName));
 	}
 
 	function getAllTable() {
 		$path = $this -> REST_API['object']['get_all_tables'];
-		return $this -> rest_execute($path, $this -> CONFIG['contentType'], '');
+		return $this -> rest_execute($path, $this -> CONFIG['contentType'], '', null);
 
 	}
 
 	function getTable($tableId) {
 		$path = $this -> REST_API['object']['get_table'] . $tableId;
-		return $this -> rest_execute($path, $this -> CONFIG['contentType'], '');
+		return $this -> rest_execute($path, $this -> CONFIG['contentType'], '', null);
 	}
 
 	function getRow($parameters) {
 		$path = $this -> REST_API['object']['get_row'];
-		return $this -> rest_execute($path, $this -> CONFIG['contentType'], $parameters);
+		return $this -> rest_execute($path, $this -> CONFIG['contentType'], $parameters, null);
 	}
 
 	function getAll($parameters) {
 		$path = $this -> REST_API['object']['get_all'];
 
-		return $this -> rest_execute($path, $this -> CONFIG['contentType'], $parameters);
+		return $this -> rest_execute($path, $this -> CONFIG['contentType'], $parameters, null);
 	}
 
-	function rest_execute($path, $contentType, $parameters) {
+	function addRow($parameters) {
+		$path = $this -> REST_API['object']['add_row'];
+		return $this -> rest_execute($path, $this -> CONFIG['contentType'], $parameters, 'PUT');
+	}
+
+	function delRow($parameters) {
+		$path = $this -> REST_API['object']['delete_row'];
+		return $this -> rest_execute($path, $this -> CONFIG['contentType'], $parameters, 'POST');
+	}
+
+	function updateRow($parameters) {
+		$path = $this -> REST_API['object']['update_table'];
+		return $this -> rest_execute($path, $this -> CONFIG['contentType'], $parameters, 'PUT');
+	}
+
+	function rest_execute($path, $contentType, $parameters, $custome_request) {
 		$url = $path;
-		$fields_string = json_encode($parameters, JSON_FORCE_OBJECT);
+		if (is_string($parameters) && $this -> isJson($parameters)) {
+			$fields_string = $parameters;
+		} else {
+			$fields_string = json_encode($parameters, JSON_FORCE_OBJECT);
+		}
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 90);
 		curl_setopt($ch, CURLOPT_TIMEOUT, 120);
@@ -78,11 +83,19 @@ class managerapi extends CI_Model {
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_POST, count($parameters));
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
+		if ($custome_request != null)
+			;
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $custome_request);
 		$response = curl_exec($ch);
-		//echo $url.json_encode($response);
+		// echo $url.json_encode($response);
 		// exit;
 		curl_close($ch);
 		return $response;
+	}
+
+	function isJson($string) {
+		json_decode($string);
+		return (json_last_error() == JSON_ERROR_NONE);
 	}
 
 }
