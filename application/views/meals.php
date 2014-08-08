@@ -4,7 +4,7 @@
 		<li>{{meal}}</li>
 	</ul>
 </script>
-<div class="container box1 effect8">
+<div class="box1 effect8">
     <h3>Effect 8</h3>
 </div>
 <div id="meals_container" class="container box effect8">
