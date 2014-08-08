@@ -61,7 +61,7 @@ class managerapi extends CI_Model {
 	}
 
 	function updateRow($parameters) {
-		$path = $this -> REST_API['object']['update_table'];
+		$path = $this -> REST_API['object']['update_row'];
 		return $this -> rest_execute($path, $this -> CONFIG['contentType'], $parameters, 'PUT');
 	}
 
@@ -83,11 +83,10 @@ class managerapi extends CI_Model {
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_POST, count($parameters));
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
-		if ($custome_request != null)
-			;
-		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $custome_request);
+		if($custome_request != null);
+-			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $custome_request);
 		$response = curl_exec($ch);
-		// echo $url.json_encode($response);
+		echo $url.json_encode($response);
 		// exit;
 		curl_close($ch);
 		return $response;

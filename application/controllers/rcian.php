@@ -29,6 +29,7 @@ class Rcian extends CI_Controller {
 	}
 
 	public function test() {
+		$this->managerapi->getTableByName('Meals');
 		// $tmp->;
 		// $this->managerapi->register();
 		// $p = array("table"=>"Meals", "data"=> array("Cuisine"=>"V1"));
@@ -36,10 +37,13 @@ class Rcian extends CI_Controller {
 		// $p1 = array("table" => "Meals", "objectId" => '53e46399e4b0f681af035445');
 		// echo "del";
 		// $this -> managerapi -> delRow($p2);
-		$p2 = array("table" => "Meals","objectId"=>"53e43786e4b0f681af035437", "data" => array("Note" => "aaafdf"));
-		print_r(json_encode($p2, JSON_FORCE_OBJECT));
-		// echo "edit";
-		print_r($this -> managerapi -> updateRow($p2));
+		// print_r($_POST);
+		// $p2 = array("table" => "Meals","objectId"=>"53e43786e4b0f681af035437", "data" => array("Note" => "asd"));
+		// print_r(json_encode($p2, JSON_FORCE_OBJECT));
+		// print_r($this -> managerapi -> updateRow($p2));
+		// $p3 = array("email"=>"m@g.com", "password" => "abc", "name"=>"n");
+		// print_r(json_encode($p3, JSON_FORCE_OBJECT));
+		// print_r($this -> managerapi -> register($p3));
 		
 	}
 	
