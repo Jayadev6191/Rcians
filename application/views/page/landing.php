@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="box effect5">
-		<img src="<?php echo config_item('base_url');?>assets/img/p2.png">
+		<img src="assets/img/p2.png">
 	</div>
 </div>
 <!-- /container -->

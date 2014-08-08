@@ -1,4 +1,5 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php 
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Meals extends CI_Controller {
   
@@ -9,17 +10,10 @@ class Meals extends CI_Controller {
     }
   public function index()
   {
-	$this->load->view('template/header');
+	  $this->load->view('template/header');
     $this->load->view('meals');
   }
   
-  
-  public function getMealName()
- {
-         $meal_response=$this->managerapi->getTableByName("Meals");
-         
- }
- 
 }
 
 /* End of file welcome.php */

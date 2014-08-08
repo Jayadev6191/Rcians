@@ -30,18 +30,31 @@ class managerapi extends CI_Model {
         );
 	}
 	
-    function register($parameters){
-        $path = $this->REST_API['user']['sign_up'];
-        // print_r($this->getTableByName('Meals'));
-        return $this->rest_execute($path,$this->CONFIG['contentType'],$parameters);
+    function register(){
+        // $path = $this->REST_API['user']['sign_up'];
+        print_r($this->getTableByName('Meals'));
+        // return $this->rest_execute($path,$this->CONFIG['contentType'],$parameters);
     }
+     function logIn($parameters){
+         
+     }
+      function logOut($parameters){
+          
+      }
     function getTableByName($tableName){
         $allTable = json_decode($this->getAllTable());
         if(isset($allTable->object)){
             foreach($allTable->object as $table){
-                print_r($table);
+                
                 if($table->name == $tableName){
-                     return $this->getTable($table->id);
+                    
+                     $currenTable = $this->getTable($table->id);
+                    print_r($currenTable);
+                     print_r($currenTable->table->columns->id);
+                        $parameters = array('id'=>$currenTable->table->columns->id,'table'=>$currenTable->table->name);
+                       
+                        print_r($parameters);
+                        return $this->getRow($parameters);
                 }
             }
         }
@@ -54,6 +67,10 @@ class managerapi extends CI_Model {
     }
     function getTable($tableId){
         $path = $this->REST_API['object']['get_table'].$tableId;
+        return $this->rest_execute($path,$this->CONFIG['contentType'],'');
+    }
+    function getRow($parameters){
+        $path = $this->REST_API['object']['get_row'].$tableId;
         return $this->rest_execute($path,$this->CONFIG['contentType'],'');
     }
     function rest_execute($path, $contentType, $parameters) {

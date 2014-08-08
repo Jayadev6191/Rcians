@@ -26,6 +26,7 @@ class Rcian extends CI_Controller {
     }
 
     public function register() {
+        // $tmp->;
         $this->managerapi->register();
     }
 
