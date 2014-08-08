@@ -31,7 +31,7 @@ class managerapi extends CI_Model {
 	}
 	
     function register(){
-        print_r($this->REST_API);
+        // print_r($this->REST_API);
         // $path = $this->REST_API['user']['sign_up'];
         // $this->rest_execute($path);
         // echo($path);
@@ -50,18 +50,21 @@ class managerapi extends CI_Model {
     }
     function getAllTable(){
         $path = $this->REST_API['object']['get_all_tables'];
-        echo($path);
+        // echo($path);
         return $this->rest_execute($path,$this->CONFIG['appKey']
-                             ,$this->CONFIG['envTypeKey'],$this->CONFIG['contentType']);
+                             ,$this->CONFIG['envTypeKey'],$this->CONFIG['contentType'],'');
         
     }
     function getTable($tableId){
-        
+        $path = $this->REST_API['object']['get_all_tables'];
+        // echo($path);
+        return $this->rest_execute($path,$this->CONFIG['appKey']
+                             ,$this->CONFIG['envTypeKey'],$this->CONFIG['contentType'],'');
     }
-    function rest_execute($path, $appKey, $envTypeKey, $contentType) {
+    function rest_execute($path, $appKey, $envTypeKey, $contentType, $parameters) {
     	// $config = om_getSiteConfig();
     	$url = $path;
-    
+        $fields_string = json_encode($parameters);
     	$ch = curl_init();
     	curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 90);
     	curl_setopt($ch, CURLOPT_TIMEOUT, 120);
@@ -69,9 +72,10 @@ class managerapi extends CI_Model {
     	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     	curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
     	curl_setopt($ch, CURLOPT_HEADER, 0);
-    	curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type:".$contentType, "X-Moback-Environment-Key:" . $envTypeKey, "X-Moback-Application-Key:" . $appKey));
+    	curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type:".$contentType, "X-Moback-Environment-Key:" . $envTypeKey, "X-Moback-Application-Key:" . $this->CONFIG['appKey']));
     	curl_setopt($ch, CURLOPT_URL, $url);
-    
+        curl_setopt($ch, CURLOPT_POST, count($parameters));
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
     	$response = curl_exec($ch);
     	//echo $url.json_encode($response);
     	// exit;
