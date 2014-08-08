@@ -47,14 +47,15 @@ Events.getEvents = function(){
     data = $.parseJSON(data);
     var content = "<ul>";
 	for(var i =0; i < data['object'].length; i++){
+		
 		content+="<li>";
-		content+="<h3>Name: "+data['object'][i].name+"</h3>";
+		content+="<h3>"+data['object'][i].name+"</h3>";
 		content+="<p>Venue: "+data['object'][i].venue+"</p>";
 		content+="<p>onDate: "+new Date(parseInt(data['object'][i].ondate)).toString()+"</p>";
 		content+="</li>";
 	}
 	content+="</ul>";
-	$("#events").html(content);
+	$("#events").append(content);
     // var all_letters = data.all_newsletters.monthly;
     // console.log(all_letters);    
     
