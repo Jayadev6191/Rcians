@@ -30,17 +30,13 @@ class managerapi extends CI_Model {
         );
 	}
 	
-    function register(){
-        // print_r($this->REST_API);
-        // $path = $this->REST_API['user']['sign_up'];
-        // $this->rest_execute($path);
-        // echo($path);
-        print_r($this->getTableByName('Meals'));
+    function register($parameters){
+        $path = $this->REST_API['user']['sign_up'];
+        // print_r($this->getTableByName('Meals'));
+        return $this->rest_execute($path,$this->CONFIG['contentType'],$parameters);
     }
     function getTableByName($tableName){
         $allTable = json_decode($this->getAllTable());
-        // print_r($allTable);
-        // print_r($allTable->object);
         if(isset($allTable->object)){
             foreach($allTable->object as $table){
                 print_r($table);
@@ -53,14 +49,12 @@ class managerapi extends CI_Model {
     }
     function getAllTable(){
         $path = $this->REST_API['object']['get_all_tables'];
-        // echo($path);
         return $this->rest_execute($path,$this->CONFIG['contentType'],'');
         
     }
     function getTable($tableId){
         $path = $this->REST_API['object']['get_table'].$tableId;
-        // echo($path);
-        return $this->rest_execute($path,$this->CONFIG['contentType'],null);
+        return $this->rest_execute($path,$this->CONFIG['contentType'],'');
     }
     function rest_execute($path, $contentType, $parameters) {
     	$url = $path;

@@ -40,7 +40,7 @@
 
 $route['default_controller'] = "rcian";
 
-$route['meal'] = "meals";
+$route['meals'] = "meals";
 
 $route['404_override'] = '';
 
