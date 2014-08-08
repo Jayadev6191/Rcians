@@ -66,7 +66,7 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li class="active"><a href="rcian">Home</a></li>
             <li><a href="meals">Meal</a></li>
             <!-- <li><a href="#contact">Projects</a></li> -->
              <li><a href="newsLetters">News Letter</a></li>
