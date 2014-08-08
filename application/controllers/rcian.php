@@ -4,38 +4,6 @@ if (!defined('BASEPATH'))
 
 class Rcian extends CI_Controller {
 
-<<<<<<< HEAD
-     public function __construct()
-    {
-        parent::__construct();
-        $this->load->model('managerapi');     
-    }
-    public function index() {
-        $this -> overview();
-    }
-
-    public function overview() {
-        $this -> load -> view('template/header');
-        $this -> load -> view('page/landing');
-        $this -> load -> view('template/footer');
-    }
-
-    public function home() {
-        $this -> load -> view('template/header');
-        $this -> load -> view('page/home');
-        $this -> load -> view('template/footer');
-    }
-
-<<<<<<< HEAD
-    public function register(){
-=======
-    public function register() {
-        // $tmp->;
->>>>>>> d4735eb307c59caef9beb758d46b121a828c4609
-        $this->managerapi->register();
-    }
-
-=======
 	public function __construct() {
 		parent::__construct();
 		$this -> load -> model('managerapi');
@@ -58,10 +26,17 @@ class Rcian extends CI_Controller {
 	}
 
 	public function register() {
+		print_r($_POST);
+		$this->managerapi->register();
 	}
-
+	public function logIn() {
+		print_r($_POST);
+		$this->managerapi->logIn(p);
+	}
 	public function test() {
 		$this->managerapi->getTableByName('Meals');
+		print_r($_POST);
+		
 		// $tmp->;
 		// $this->managerapi->register();
 		// $p = array("table"=>"Meals", "data"=> array("Cuisine"=>"V1"));
@@ -76,10 +51,10 @@ class Rcian extends CI_Controller {
 		// $p3 = array("email"=>"m@g.com", "password" => "abc", "name"=>"n");
 		// print_r(json_encode($p3, JSON_FORCE_OBJECT));
 		// print_r($this -> managerapi -> register($p3));
-		
+		$p4 = array("userid"=>"m@g.com","password"=>"abc");
+		$this->managerapi->logIn($p4);
 	}
 	
->>>>>>> 1239ca95f073b36f232bd5d0f9b9bd661dcc25da
 
 }
 
