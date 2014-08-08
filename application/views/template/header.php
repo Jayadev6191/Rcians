@@ -29,7 +29,7 @@
   </head>
 
   <body>
-      <?php print_r($this->session->userdata)?>
+      <!-- <?php print_r($this->session->userdata)?> -->
     <?php if(!$this->session->userdata('ssotoken'))
     { ?>
         <div class="navbar navbar-default navbar-static-top navbar-rcians" role="navigation">
