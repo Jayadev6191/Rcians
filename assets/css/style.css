@@ -17,6 +17,9 @@
 	background:#FFF;
 	margin:40px auto;
 }
+<<<<<<< HEAD
+
+=======
 /*.box1 h3{
 	text-align:center;
 	position:relative;
@@ -29,6 +32,7 @@
 	padding: 50px;
 	margin:40px auto;
 }
+>>>>>>> 747212c7d942a55151fe9391d21fc5728bd0b078
 /*==================================================
  * Effect 5
  * ===============================================*/
@@ -88,35 +92,15 @@ a.navbar-brand{
 #meals_container .form-group{
 	display:inline-block;
 }
-.effect8
-{
-  	position:relative;       
-    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+
+.box.effect8{
+	margin-left:200px;
 }
-.effect8:before, .effect8:after
-{
-	content:"";
-    position:absolute; 
-    z-index:-1;
-    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
-    -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
-    box-shadow:0 0 20px rgba(0,0,0,0.8);
-    top:10px;
-    bottom:10px;
-    left:0;
-    right:0;
-    -moz-border-radius:100px / 10px;
-    border-radius:100px / 10px;
-} 
-.effect8:after
-{
-	right:10px; 
-    left:auto;
-    -webkit-transform:skew(8deg) rotate(3deg); 
-       -moz-transform:skew(8deg) rotate(3deg);     
-        -ms-transform:skew(8deg) rotate(3deg);     
-         -o-transform:skew(8deg) rotate(3deg); 
-            transform:skew(8deg) rotate(3deg);
+.box.effect8 input{
+	width:220px;
 }
+
+.box.effect8 .form-group{
+	display:inline-block;
+}
+

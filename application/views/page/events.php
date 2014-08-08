@@ -1,6 +1,6 @@
 <script type="text/javascript" src="public/js/events.js"></script>
 <!-- <script type="text/javascript" src="public/js/jqueryForm.js"></script> -->
-<div id="meals_container">
+<div class="box1 effect8">   
   <h3>Rc Upcomming Events</h3>
     <ul>
       <li>

@@ -1,6 +1,6 @@
 <script type="text/javascript" src="public/js/newsletters.js"></script>
 <script type="text/javascript" src="public/js/jqueryForm.js"></script>
-<div id="meals_container">
+<div class="box1 effect8">    
   <h3>Rc News letter</h3>
     <ul>
       <li><a href="./uploads/App_Store_Marketing_Getting_Started_Guide.pdf" target="_blank">Jan</a></li>
