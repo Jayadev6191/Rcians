@@ -1,32 +1,33 @@
 <script type="text/javascript" src="public/js/events.js"></script>
+<link href="assets/css/events.css"   rel="stylesheet"/>
 <!-- <script type="text/javascript" src="public/js/jqueryForm.js"></script> -->
 <div class="box1 effect8">   
   <h3>Rc Upcomming Events</h3>
-    <ul>
+    <ul class="all_events">
       <li>
-        <div>
+        <div class="eventcontainer">
           <h5>Bowling</h5>
           <p>Date: 15th August</p>
           <p>Day: Friday</p>
-          <p>Time: 3:30pm onwards</p>
+          <!-- <p>Time: 3:30pm onwards</p> -->
           <p>Venue: Abc Street</p>
         </div>
       </li>
       <li>
-        <div>
+        <div class="eventcontainer">
           <h5>Beach Day</h5>
           <p>Date: 30th August</p>
           <p>Saturday</p>
-          <p>Time: 10:00am onwards</p>
+          <!-- <p>Time: 10:00am onwards</p> -->
           <p>Venue: Abc Street</p>
         </div>
       </li>
       <li>
-        <div>
+        <div class="eventcontainer">
           <h5>Picnic</h5>
           <p>Date: 19th September</p>
           <p>Friday</p>
-          <p>Time: 10:00am - 4:00pm</p>
+          <!-- <p>Time: 10:00am - 4:00pm</p> -->
           <p>Venue: Abc Street</p>
         </div>
       </li>                  
@@ -55,14 +56,14 @@
               <label for="event_start_time">Start Time</label>              
               <input type="datetime" required="required" name="event_start_time" id="event_start_time" class="form-control">
               </div>
-              <div class="form-group">
+              <!--<div class="form-group">
               <label for="event_end_time">End Time</label>              
               <input type="text" required="required" name="event_end_time" id="event_end_time" class="form-control">
               </div>
               <div class="form-group">
               <label for="event_end_time">Venue</label>              
               <input type="text" required="required" name="eventvenue" id="eventvenue" class="form-control">
-              </div>
+              </div>-->
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
